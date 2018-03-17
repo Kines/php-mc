@@ -1,4 +1,4 @@
-FROM postika/php-mc:alpine
+FROM postika/php-mc
 MAINTAINER alexp@postika.eu
 
 RUN apk update && apk add autoconf automake gcc g++ make 
