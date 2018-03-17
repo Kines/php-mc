@@ -7,7 +7,6 @@ RUN apk add --no-cache --update \
     geoip-dev \
     gettext-dev \
     imagemagick-dev \
-    libmcrypt-dev \
     libxslt-dev \
     libmemcached-dev \
 && apk add --no-cache --virtual .build-deps \
