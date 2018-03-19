@@ -1,4 +1,4 @@
-FROM php:fpm-alpine
+FROM php:7.1-fpm-alpine
 MAINTAINER alexp@postika.eu
 
 # Install dependencies
@@ -7,6 +7,7 @@ RUN apk add --no-cache --update \
     geoip-dev \
     gettext-dev \
     imagemagick-dev \
+    libmcrypt-dev \
     libxslt-dev \
     libmemcached-dev \
 && apk add --no-cache --virtual .build-deps \
@@ -24,7 +25,7 @@ RUN apk add --no-cache --update \
     cyrus-sasl-dev \
 && pecl -q install geoip-1.1.1 imagick memcached redis \
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-webp-dir=/usr/include/ \
-&& docker-php-ext-install bcmath bz2 calendar exif gd gettext pcntl pdo_mysql mysqli shmop sockets wddx xsl \
+&& docker-php-ext-install bcmath bz2 calendar exif gd gettext pcntl pdo_mysql mcrypt mysqli shmop sockets wddx xsl \
 && docker-php-ext-enable geoip imagick memcached redis \
 && apk del .build-deps \
 && rm -rf /tmp/* \
