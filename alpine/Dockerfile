@@ -27,7 +27,7 @@ RUN apk add --no-cache --update \
 && pecl -q install geoip-1.1.1 imagick memcached redis mongodb\
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-webp-dir=/usr/include/ \
 && docker-php-ext-install bcmath bz2 calendar exif gd gettext pcntl pdo_mysql mcrypt mysqli shmop sockets wddx xsl hash \
-&& docker-php-ext-enable bcmath geoip imagick memcached redis \
+&& docker-php-ext-enable bcmath geoip imagick memcached redis mongodb \
 && apk del .build-deps \
 && rm -rf /tmp/* \
 && rm -rf /var/cache/apk/*
