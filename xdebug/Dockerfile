@@ -8,6 +8,6 @@ RUN echo 'xdebug.remote_enable=1' >> /usr/local/etc/php/conf.d/docker-php-ext-xd
 RUN echo 'xdebug.remote_port=8999' >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 RUN rm -rf /tmp/* && rm -rf /var/cache/apk/*
 
-CMD "sh"
+EXPOSE 8999
 
 
